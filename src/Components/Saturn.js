@@ -21,8 +21,20 @@ const Saturn = () => {
     }
     return ( 
         <div className="saturn">
-            <div className="planetsContainer">
+                <div className="btnsSmall">
+                    <button onClick={overview} className={isOverview ? "active" : undefined}>
+                        overview
+                    </button>
+                    <button onClick={structure}  className={isStructure ? "active" : undefined}>
+                        internal structure
+                    </button>
+                    <button onClick={geology}  className={isGeology ? "active" : undefined}>
+                        surface geology
+                    </button>
+                </div>
+                <div className="planetsContainer">
                 <div className="content">
+ 
                     <div className="imgContainer">
                         {isOverview && <img src="images/planet-saturn.svg" alt="saturn" />}
                         {isStructure && <img src="images/planet-saturn-internal.svg" alt="saturn" />}

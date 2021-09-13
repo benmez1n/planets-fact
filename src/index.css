@@ -36,63 +36,63 @@ a{
 ul{
   list-style: none;
 }
-h1,h2,.navbar li{
+h1,h2,nav li{
   text-transform: uppercase;
 }
-.navbar{
+nav{
   border-bottom:1px solid rgba(131, 131, 145, 0.2);
 }
-.navbar h2{
+nav h2{
   letter-spacing: -2px;
   margin-top: 8px;
   font-family: "Spartan";
 }
-.navbar a{
+nav a{
   text-decoration: none;
 }
 .hamburger{display: none;}
-.navbar .container{
+nav .container{
   display: flex;
   margin-top:10px;
   justify-content: space-between;
 }
-.navbar ul{
+nav ul{
   margin-top:12px;
   color:var(--nav-txt);
 }
-.navbar li{
+nav li{
   display: inline-block;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   padding-bottom:12px;
 }
-.navbar li.navAct{border-bottom: 4px solid;}
-.navbar li:not(:last-child){
+nav li.navAct{border-bottom: 4px solid;}
+nav li:not(:last-child){
   margin-right:20px;
 }
-.navbar li:first-child.navAct{
+nav li:first-child.navAct{
   border-color: var(--mercury);
 }
-.navbar li:nth-child(2).navAct{
+nav li:nth-child(2).navAct{
   border-color: var(--venus);
 }
-.navbar li:nth-child(3).navAct{
+nav li:nth-child(3).navAct{
   border-color:var(--earth) ;
 }
-.navbar li:nth-child(4).navAct{
+nav li:nth-child(4).navAct{
   border-color:var(--mars) ;
 }
-.navbar li:nth-child(5).navAct{
+nav li:nth-child(5).navAct{
   border-color: var(--jupiter);
 }
-.navbar li:nth-child(6).navAct{
+nav li:nth-child(6).navAct{
   border-color: var(--saturn);
 }
-.navbar li:nth-child(7).navAct{
+nav li:nth-child(7).navAct{
   border-color: var(--uranus);
 }
-.navbar li:last-child.navAct{
+nav li:last-child.navAct{
   border-color:var(--nuptune);
 }
 .planetsContainer{
@@ -140,18 +140,22 @@ p{
   font-size: 18px;
   text-transform: capitalize;
 }
+.btnsSmall button,
 .btnsContainer button{
   display: block;
-  margin-top: 10px;
   border: 1px solid rgba(131, 131, 145, 0.2);
   background: transparent;
   color: var(--txt);
+  text-transform: uppercase;
+}
+.btnsSmall{display: none;}
+.btnsContainer button{
+  margin-top: 10px;
   font-size: 18px;
   padding:10px 0 10px 20px;
   width:120%;
   font-weight: 600;
   text-align: left;
-  text-transform: uppercase;
   cursor: pointer;
 }
 .btnsContainer button span:first-child{
@@ -195,20 +199,20 @@ p{
   margin-bottom: 20px;
 }
 @media (max-width:769px) {
-  .navbar{border: none;}
-  .navbar .header{
+  nav{border: none;}
+  nav .header{
     display: flex;
     justify-content: space-between;
     border-bottom:1px solid rgba(131, 131, 145, 0.2);
     padding-bottom: 15px;
     margin-top:6px;
   }
-  .navbar h2{font-size: 20px;}
+  nav h2{font-size: 20px;}
   .hamburger{
     display:block;
     font-size: 30px;
   }
-  .navbar .container{
+  nav .container{
     flex-direction: column;
     margin-top:10px;
     justify-content: initial;
@@ -227,7 +231,7 @@ p{
     background-color: var(--bg);
   }
   
-  .navbar li{
+  nav li{
     display: block;
     padding:20px 0 20px 50px;
     position: relative;
@@ -236,7 +240,7 @@ p{
     font-weight: 600;
     border-bottom:2px solid rgba(131, 131, 145, 0.4);
   }
-  .navbar li::before{
+  nav li::before{
     content:"";
     position: absolute;
     left:10px;
@@ -244,7 +248,7 @@ p{
     height: 20px;
     border-radius: 50%;
   }
-  .navbar li::after{
+  nav li::after{
     content: "";
     position: absolute;
     right:10px;
@@ -252,31 +256,60 @@ p{
     height: 20px;
     background: url(images/icon-chevron.svg) center no-repeat;
   }
-  .navbar li:first-child::before{
+  nav li:first-child::before{
     background-color: var(--mercury);
   }
-  .navbar li:nth-child(2):before{
+  nav li:nth-child(2):before{
     background-color: var(--venus);
   }
-  .navbar li:nth-child(3)::before{
+  nav li:nth-child(3)::before{
     background-color:var(--earth) ;
   }
-  .navbar li:nth-child(4)::before{
+  nav li:nth-child(4)::before{
     background-color:var(--mars) ;
   }
-  .navbar li:nth-child(5)::before{
+  nav li:nth-child(5)::before{
     background-color: var(--jupiter);
   }
-  .navbar li:nth-child(6)::before{
+  nav li:nth-child(6)::before{
     background-color: var(--saturn);
   }
-  .navbar li:nth-child(7)::before{
+  nav li:nth-child(7)::before{
     background-color: var(--uranus);
   }
-  .navbar li:last-child:before{
+  nav li:last-child:before{
     background-color:var(--nuptune);
   }
-  .navbar li:not(:last-child){
+  nav li:not(:last-child){
     margin-right:0;
+  }
+  .content{
+    width:90%;
+    margin:50px auto;
+    grid-template-columns: repeat(1,1fr);
+  }
+  .imgContainer{
+    grid-column: 1/1;
+  } 
+  .imgContainer img{
+    width:100%;
+  }
+  .content .definitions{
+    grid-column: 1/1;
+    text-align: center;
+  }
+  .btnsContainer{display: none;}
+  .btnsSmall{
+    width:100%;
+    height: 50px;
+    display: flex;
+  }
+  .btnsSmall button{
+    width:100%;
+  }
+  .infos{
+    grid-template-columns: repeat(1,1fr);
+    row-gap: 15px;
+    text-align: center;
   }
 }

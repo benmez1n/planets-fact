@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 const Navbar = () => {
     const menuHandler = () => {
@@ -12,7 +11,7 @@ const Navbar = () => {
         navList[id].classList.add("navAct")
     }
     return ( 
-        <div className="navbar">
+        <nav>
             <div className="container">
                 <div className="header">
                     <h2>the planets</h2>
@@ -35,7 +34,7 @@ const Navbar = () => {
                             earth
                         </Link>
                     </li>
-                    <li  >
+                    <li>
                         <Link to="/mars" onClick={()=>activeHandler(3)}>
                             mars
                         </Link>
@@ -58,7 +57,7 @@ const Navbar = () => {
                     </Link></li>
                 </ul>
             </div>
-        </div>
+        </nav>
     );
 }
  
